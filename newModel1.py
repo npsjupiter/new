@@ -4,6 +4,8 @@ import numpy as np
 import pickle  #to load a saved model
 import base64  #to open .gif files in streamlit app
 import pickle
+import sklearn 
+from sklearn.ensemble import RandomForestClassifier
 
 @st.cache(suppress_st_warning=True)
 def get_fvalue(val):
@@ -38,15 +40,6 @@ elif app_mode == 'Prediction':
     JobLevel=st.sidebar.selectbox('JobLevel',(1,2,3))
     Job_Satisfaction=st.sidebar.selectbox('Job_Satisfaction',(1,2,3,4))
    
-        
-data1={
-
-    'MonthlyIncome':MonthlyIncome,
-    'Distance_From_Home':Distance_From_Home,
-    'Age':Age,
-    'JobLevel':JobLevel,
-    'Job_Satisfaction':Job_Satisfaction
-    }
 
 
 feature_list=[Age,Distance_From_Home,JobLevel,Job_Satisfaction,MonthlyIncome]
